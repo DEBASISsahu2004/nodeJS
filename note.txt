@@ -5,4 +5,6 @@ require - function to use module(commonJS)
 module - info about current module(file)
 process - info about env where the program is being executed
 
-// Modules
+Read Event Loop
+-> first immedicate code is executed and then the callback functions are executed(The asynchronous functions)
+

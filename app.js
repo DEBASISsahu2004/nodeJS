@@ -1,20 +1,50 @@
-// npm - global command, comes with node
-// npm --version
+const {readFile, writeFile} = require("fs");
 
-// local dependency - use it only in this particular project
-// npm i <packageName>
+const util = require("util");
+const readFilePromise = util.promisify(readFile);
+const writeFilePromise = util.promisify(writeFile);
 
-// global dependency - use it in any project
-// npm install -g <pacageName>
-// sudo npm install -g <packageName> (mac)
+const start = async() => {
+    try{
+        const first = await readFilePromise("./content/first.txt", "utf8");
+        const second = await readFilePromise("./content/second.txt", "utf8");
+        await writeFilePromise("./content/result-mind-grenade.txt", `THIS IS AWESOME: ${first} ${second}`, {flag: "a"});
+        console.log(first)
+        console.log(second);
+    }catch(error){
+        console.log(error);
+    }
+}
 
-// package.json - manifest file (stores important info about project/package)
-// manual approach (create package.json in the root, create properties etc)
-// npm init (step by step, press enter to skip)
-// npm init -y (everything default)
+start();
 
-const _ = require("lodash");
+// const getText = (path) => {
+//     return new Promise((resolve, reject) => {
+//         readFile(path, "utf8", (err, data) => {
+//             if (err) {
+//                 reject(err);
+//             } else {
+//                 resolve(data);
+//             }
+//         });
+//     });
+// };
 
-const items = [1, [2, [3, [4]]]];
-const newItems = _.flattenDeep(items);
-console.log(newItems);
+// getText("./content/first.txt").then((result) => {
+//     console.log(result);
+// }).catch((err) => {
+//     console.log(err);
+// });
+
+// const start = async() => {
+//     try{
+//         const first = await getText("./content/first.txt");
+//         const second = await getText("./content/second.txt");
+//         console.log(first)
+//         console.log(second);
+//     }catch(error){
+//         console.log(error);
+//     }
+// }
+
+// start();
