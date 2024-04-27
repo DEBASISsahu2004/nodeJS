@@ -6,6 +6,7 @@ const app = express();
 // setup static and middleware
 app.use(express.static('./public'));
 
+// Static assert means it is a file that the server doesn't have to change it
 // app.get('/', (req, res)=>{
 //     res.sendFile(path.resolve(__dirname,'index.html'));
 // Adding to static asserts

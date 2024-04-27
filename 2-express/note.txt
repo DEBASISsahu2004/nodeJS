@@ -1,0 +1,9 @@
+in express or in http case when we talk about api we mean setting up http interface to interact with the data. Now data is send using JSON and in order to send back our response we use res.JSON method.
+API - JSON
+send data
+res.send() 
+
+Now server side rendering we send back html and css and js to the browser and browser renders the html and css and js to the browser.
+SSR - template
+send template
+res.render()

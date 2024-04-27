@@ -6,6 +6,10 @@
 const express = require('express');
 const app = express();
 
+// app.all('*', (req, res)=>{
+//     res.status(404).send('<h1>404 Page not found</h1>');
+// });
+
 app.get('/', (req, res)=>{
     console.log('User hits the main page');
     res.status(200).send('Hello Express');
