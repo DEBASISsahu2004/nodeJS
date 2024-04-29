@@ -28,10 +28,10 @@ app.listen(5000, ()=>{
     console.log('Server is running on port 5000');
 });
 
-// app.get
+// app.get - It is used to setup routes
 // app.post
 // app.put
 // app.delete
-// app.all
-// app.use
-// app.listen
+// app.all - It is used to setup the default route
+// app.use - It is used to setup middleware and static asserts
+// app.listen - It is used to setup port for the serve to listen
