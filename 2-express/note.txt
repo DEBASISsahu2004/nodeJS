@@ -7,3 +7,8 @@ Now server side rendering we send back html and css and js to the browser and br
 SSR - template
 send template
 res.render()
+
+Query string parameters alos called url parameters, it is used to send small information to the server using the url. 
+
+Middleware are function that execute during the request to the server. EWach middeware function has access to req and res object.
+
