@@ -1,0 +1,54 @@
+to show all database - show dbs
+to use a database - use dbName // If not present it will create
+to create collection - db.createCollection
+to remove/drop a collection - db.drop(collection_nmar);
+to drop/remove the database - db.dropDatabase();
+
+after creating the db(e.g. school)
+to insert into a collection
+db.students.insertOne({name: "Debasis", age: 19})
+
+to get all the document inside a collection
+db.students.find()
+
+to insert multiple documents
+db.students.insertMany([{name: Rony, age: 19}, {name: Kedar, age: 20}, {name: Alok, age: 20}])
+
+//find()
+.find({Query}, {Projection})
+
+to sort the documents in alphabetic order
+db.students.find().sort({name: 1}) // -1 for reverse
+db.students.find().sort({age: 1}) // -1 for reverse
+
+to limit the number of documents to be shown
+db.students.find().limit(1);
+
+to find a specific document
+db.students.find({name: "Debasis"})
+db.students.find({name: "Debasis", age: 19})
+
+to get only name form the document
+db.students.find({}, {name: true})
+
+// update
+.update(filter, updatevalue)
+
+to update a document
+db.students.updateOne({name: "Debasis"}, {$set: {age: 20}})  // set is used to update the field
+
+to remove a field
+db.students.updateOne({name: "Debasis"}, {$unset: {age: ""}})  // unset to remove field
+
+to updateMany
+db.students.updateMany({}, {$set: {age: 20}})
+
+to add a field if doesn't exist
+db.students.updateMany({age: {$exists: false}}, {$set: {age: 20}})
+
+
+
+mongoose is a package using which i an include mongodb in nodeJS
+
+schema - define the structure
+    schema - model
